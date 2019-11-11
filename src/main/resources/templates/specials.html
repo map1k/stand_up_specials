@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Specials</title>
+</head>
+<body>
+<div class="container">
+    <div class="table-responsive" th:if="${not #lists.isEmpty(specials)}">
+        <table>
+            <thead>
+            <tr>
+                <th> name </th>
+                <th> year </th>
+                <th> imdbRating </th>
+                <th> imdbVotes </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="special : ${specials}">
+                <td><span th:text="${special.name}"> name </span></td>
+                <td><span th:text="${special.year}"> year </span></td>
+                <td><span th:text="${special.imdbRating}"> imdbRating </span></td>
+                <td><span th:text="${special.imdbVotes}"> imdbVotes </span></td>
+                <td><span th:text="${special.ultimateScore}"> imdbVotes </span></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<a th:href="@{/index}">home</a>
+</body>
+</html>
